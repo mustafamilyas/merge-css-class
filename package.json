@@ -1,10 +1,10 @@
 {
-  "name": "merge-classnames",
+  "name": "merge-css-class",
   "version": "1.0.0",
   "description": "a tiny utility function for merging css classnames",
   "source": "index.js",
-  "main": "dist/merge-classnames.js",
-  "module": "dist/merge-classnames.m.js",
+  "main": "dist/merge-css-class.js",
+  "module": "dist/merge-css-class.m.js",
   "files": [
     "*.d.ts",
     "dist"
@@ -35,5 +35,13 @@
     "@babel/preset-env": "^7.22.7",
     "jest": "^29.6.1",
     "parcel": "^2.9.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mustafamilyas/merge-css-class.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mustafamilyas/merge-css-class/issues"
+  },
+  "homepage": "https://github.com/mustafamilyas/merge-css-class"
 }

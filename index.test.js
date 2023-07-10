@@ -1,6 +1,6 @@
-import { mergeClassnames } from "./index";
+import { mergeCssClass } from "./index";
 
-describe("mergeClassnames", () => {
+describe("mergeCssClass", () => {
   it.each([
     ["empty argument", [], ""],
     [
@@ -14,7 +14,7 @@ describe("mergeClassnames", () => {
       "",
     ],
   ])("%s", (s, args, expected) => {
-    const result = mergeClassnames(...args);
+    const result = mergeCssClass(...args);
     expect(result).toBe(expected);
   });
 });

@@ -1,4 +1,4 @@
-export function mergeClassnames(...args) {
+export function mergeCssClass(...args) {
   let result = "";
   for (const arg of args) {
     if (typeof arg === "string") {
