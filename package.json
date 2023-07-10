@@ -1,0 +1,30 @@
+{
+  "name": "merge-classnames",
+  "version": "1.0.0",
+  "description": "a tiny utility function for merging css classnames",
+  "source": "index.js",
+  "main": "dist/merge-classnames.js",
+  "module": "dist/merge-classnames.m.js",
+  "files": [
+    "*.d.ts",
+    "dist"
+  ],
+  "scripts": {
+    "watch": "parcel watch",
+    "build": "parcel build"
+  },
+  "keywords": [
+    "css",
+    "classnames",
+    "classname",
+    "util",
+    "utility",
+    "merge",
+    "classes"
+  ],
+  "author": "Muhamad Ilyas Mustafa",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  }
+}

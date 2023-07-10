@@ -1,0 +1,1 @@
+{"mappings":";;;;;AAAO,SAAS;IACd,OAAO,UAAU,OAAO,CAAC,MAAQ,OAAO,OAAO,QAAQ,UAAU,KAAK;AACxE","sources":["index.js"],"sourcesContent":["export function mergeClassnames() {\n  return arguments.filter((arg) => arg && typeof arg === \"string\").join(\" \");\n}\n"],"names":[],"version":3,"file":"merge-classnames.js.map","sourceRoot":"../"}
