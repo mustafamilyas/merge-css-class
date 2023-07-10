@@ -32,6 +32,7 @@
   "author": "Muhamad Ilyas Mustafa",
   "license": "ISC",
   "devDependencies": {
+    "@babel/preset-env": "^7.22.7",
     "jest": "^29.6.1",
     "parcel": "^2.9.3"
   }
