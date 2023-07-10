@@ -1,5 +1,7 @@
-function $747425b437e121da$export$6520295942e84b48() {
-    return arguments.filter((arg)=>arg && typeof arg === "string").join(" ");
+function $747425b437e121da$export$6520295942e84b48(...args) {
+    let result = "";
+    for (const arg of args)if (typeof arg === "string") result += arg + " ";
+    return result.trim();
 }
 
 

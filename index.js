@@ -1,3 +1,9 @@
-export function mergeClassnames() {
-  return arguments.filter((arg) => arg && typeof arg === "string").join(" ");
+export function mergeClassnames(...args) {
+  let result = "";
+  for (const arg of args) {
+    if (typeof arg === "string") {
+      result += arg + " ";
+    }
+  }
+  return result.trim();
 }
