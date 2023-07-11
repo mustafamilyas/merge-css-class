@@ -1,6 +1,6 @@
 {
   "name": "merge-css-class",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "a tiny utility function for merging css classnames",
   "source": "index.js",
   "main": "dist/merge-css-class.js",
