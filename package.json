@@ -5,6 +5,7 @@
   "source": "index.js",
   "main": "dist/merge-css-class.js",
   "module": "dist/merge-css-class.m.js",
+  "typings": "index.d.ts",
   "files": [
     "*.d.ts",
     "dist"
