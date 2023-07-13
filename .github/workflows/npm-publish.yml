@@ -44,3 +44,4 @@ jobs:
           cmd: publish --verbose
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          NPM_TOKEN: ${{secrets.npm_token}}
