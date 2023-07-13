@@ -24,7 +24,7 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: test
-      - run: yarn test
+      - run: yarn test:ci
 
   publish-npm:
     needs: build
