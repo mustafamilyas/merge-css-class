@@ -41,6 +41,6 @@ jobs:
       - name: Publish
         uses: borales/actions-yarn@v4
         with:
-          cmd: publish --access=public
+          cmd: publish --verbose
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
