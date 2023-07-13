@@ -40,6 +40,8 @@ jobs:
           cmd: install --frozen-lockfile
       - name: Set NPM Publish Token
         run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+        env:
+          NPM_TOKEN: ${{secrets.npm_token}}
       - name: Publish
         uses: borales/actions-yarn@v4
         with:
