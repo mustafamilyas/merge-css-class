@@ -7,11 +7,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches: [master]
-
-env:
-  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 jobs:
   build:
@@ -30,15 +25,13 @@ jobs:
         with:
           cmd: test:ci
 
-  publish-npm:
-    needs: build
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
-          registry-url: https://registry.npmjs.org/
+          node-version: "18"
       - name: Run Install
         uses: borales/actions-yarn@v4
         with:
@@ -47,7 +40,17 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: build
-      - name: Set deployment token
-        run: npm config set 'https://registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
-      - name: Deploy to NPM
-        run: npm publish --access public --verbose
+      - name: "Automated Version Bump"
+        uses: "phips28/gh-action-bump-version@master"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        with:
+          minor-wording: "add,Adds,new"
+          major-wording: "MAJOR,cut-major"
+          patch-wording:
+            "patch,fixes" # Providing patch-wording will override commits
+            # defaulting to a patch bump.
+          rc-wording: "RELEASE,alpha"
+      - uses: JS-DevTools/npm-publish@v2
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
