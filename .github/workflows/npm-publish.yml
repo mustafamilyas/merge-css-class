@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -28,20 +28,9 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: build
-      - name: "Automated Version Bump"
-        uses: "phips28/gh-action-bump-version@master"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        with:
-          minor-wording: "add,Adds,new"
-          major-wording: "MAJOR,cut-major"
-          patch-wording:
-            "patch,fixes" # Providing patch-wording will override commits
-            # defaulting to a patch bump.
-          rc-wording: "RELEASE,alpha"
 
   publish-npm:
-    needs: build
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -56,6 +45,17 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: build
+      - name: "Automated Version Bump"
+        uses: "phips28/gh-action-bump-version@master"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        with:
+          minor-wording: "add,Adds,new"
+          major-wording: "MAJOR,cut-major"
+          patch-wording:
+            "patch,fixes" # Providing patch-wording will override commits
+            # defaulting to a patch bump.
+          rc-wording: "RELEASE,alpha"
       - uses: JS-DevTools/npm-publish@v2
         with:
           token: ${{ secrets.NPM_TOKEN }}
