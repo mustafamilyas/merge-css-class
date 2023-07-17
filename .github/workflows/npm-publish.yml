@@ -53,9 +53,7 @@ jobs:
         with:
           minor-wording: "add,Adds,new"
           major-wording: "MAJOR,cut-major"
-          patch-wording:
-            "patch,fixes" # Providing patch-wording will override commits
-            # defaulting to a patch bump.
+          patch-wording: "patch,fixes"
           rc-wording: "RELEASE,alpha"
       - uses: JS-DevTools/npm-publish@v2
         with:
